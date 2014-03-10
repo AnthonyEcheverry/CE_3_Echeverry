@@ -1,36 +1,31 @@
-ECE281_CE3
-===========
-
-#CE3: Elevator Controller
 
 
-#Moore Machine
+#ECE_CE3: Elevator Controller
+
+
+#Moore Simulation
+The below picture is a simulation of the Moore Elevator Code.
 
 ![Pic2][pic2]
 
 [pic2]: https://raw.github.com/AnthonyEcheverry/CE_3_Echeverry/master/use_this_one.PNG 
 
-#Mealy Machine
+The above Moore testbench can be visually verified as correct by looking at the different states of the ISim.  As we can see, the elevator starts at floor one, like it should and then goes up one floor every two clock cycles (which is the rising edge of the clock).  After reaching the fourth floor, it will return to the first floor with no stops at the 3rd and 2nd floor.
 
-[picture_1]: https://raw.github.com/AnthonyEcheverry/CE_3_Echeverry/master/Mealy_simpic.PNG "Mealy"
+
+
+
+
+#Mealy Simulation
+The below picture is a simulation of the Mealy Elevator Code.
+
+[picture_1]: https://raw.github.com/AnthonyEcheverry/CE_3_Echeverry/master/Mealy_new.PNG "Mealy"
 ![Picture_1][picture_1] 
 
-#Pre-Lab Analysis
+The Mealy Simulation  is correct because we can see that like the Moore Elevator, the Mealy Elevator also starts at floor 1 and then goes up each floor one at a time and stays at each floor for 2 steps until if procedes.  It then goes back down from the fourth floor to the first floor without stopping at the 3rd or 2nd.  I also know that my ISim is correct for both because it matches what was given to us in the CE instructions.
 
-I can not get this to work on my nexys chip no matter what I have tried.  Although I know my code was right and it was correct in the testbench, I could not get it to correctly load for the functionality test. I was running into all the problems when I tried to implement my design after creating the ucf file.  After working on it for hours and changing my code multiple times, I decided to quit. I learned that next time I should go into EI to figure out what the heck is going on.
+In-code Questions: I answered most of these in the code, but here they are for easier viewing.
+1. Reset is synchronous because it takes place "in real time," it changes at certain periods with the clock.
+2. I am not really sure if the Mealy and Moore Machines were different. The act the same and get the same result except the Mealy Machine had a "next_floor" option built in.
 
 
-#The Lab
-![pic3][pic3]
-
-[pic3]: https://raw2.github.com/AnthonyEcheverry/ECE281_Lab2/master/4_bit_adder.jpg
-
-#Test Bench
-
-The test bench for this lab was one of the last things I worked on. I realize this was a very bad idea only after it was too late.  I should have gone straight to the testbench after my .vhd code was completed.  Instead, I got overzealous and skipped straight to the .ucf file to try and get the functionality done.  It is because of this that I really failed to implement my design into the nexys.
-
-#Design and Attempted Debugging
-
-This project was an absolute nightmare for me when it came to debugging.  I ONLY uploaded my final .vhd file that I put the most work into, but started with many other files that did not end up working and got too complicated for me to try and fix. Instead I started over with a new file, which still didn't work in the end.  When I talked to Dr. Kneeble, he said that I was not correctly instantiating my bit files that I call in the component portion of the code.  I went back to my room to try and figure out what to fix but I could not figure it out.  
-
-The purpose of this project was to create a 4 bit adder which could subtract (by using 2's comp), implement a carry, and tell the user when overflow is generated.  Sounds simple enough, but a lot of tiny errors in my code kept me from being able to complete it.  In the future I realize that I will need to start A LOT sooner than I previously did and go in for EI more often.  
